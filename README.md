@@ -96,7 +96,7 @@ The monitor receives the observed counts, builds a separate RATISS counts associ
 
 ## 5. Sidecar correction and regeneration
 
-> **Laboratory transparency.** Previous artifacts displayed an initial sidecar signature of `1.214413`. This value came from a known bug in `TopologicalQubit` — degenerate cycles (birth ≈ death, ~1e-16) counted as persistent — fixed in the engine ([PR #1](https://github.com/evinajonathan13-max/ratiss-topological-decoherence-engine/pull/1): `1e-9` tolerance, dilating geometry twist 0→π, noise amplitude `0.2`). The untwisted compact ring now yields `P_sig ≈ 0.18`, and the sidecar genuinely reacts to the measured degradation. All artifacts in this repository have been regenerated with the corrected engine; the values above are the corrected values, retained without adjustment.
+> **Laboratory transparency.** Previous artifacts displayed an initial sidecar signature of `1.214413`. This value came from a known bug in `TopologicalQubit` — degenerate cycles (birth ≈ death, ~1e-16) counted as persistent — fixed in the engine ([PR #1](https://github.com/jonathansearch/ratiss-topological-decoherence-engine/pull/1): `1e-9` tolerance, dilating geometry twist 0→π, noise amplitude `0.2`). The untwisted compact ring now yields `P_sig ≈ 0.18`, and the sidecar genuinely reacts to the measured degradation. All artifacts in this repository have been regenerated with the corrected engine; the values above are the corrected values, retained without adjustment.
 
 ## 6. Experiment 3 — Validation against a real IBM QPU
 
@@ -108,7 +108,7 @@ IBM_QUANTUM_TOKEN=... python3 scripts/run_grover_qpu_validation.py \
   --backend ibm_marrakesh --shots 512
 ```
 
-> **Claim boundary.** The Reality Flag compares the Aer simulation to real hardware; it does not certify the hardware and is not an IBM anomaly diagnosis. The **LCT-ETH coupling is not applied here**: it requires a density matrix (available in [COSMOS](https://github.com/evinajonathan13-max/QPU-Ratiss-COSMOS), not in Grover counts). This is the honest transdisciplinary boundary between the two laboratories. The IBM token is read only from the `IBM_QUANTUM_TOKEN` environment variable; it is never written into the artifact, the repository or any log.
+> **Claim boundary.** The Reality Flag compares the Aer simulation to real hardware; it does not certify the hardware and is not an IBM anomaly diagnosis. The **LCT-ETH coupling is not applied here**: it requires a density matrix (available in [COSMOS](https://github.com/jonathansearch/QPU-Ratiss-COSMOS), not in Grover counts). This is the honest transdisciplinary boundary between the two laboratories. The IBM token is read only from the `IBM_QUANTUM_TOKEN` environment variable; it is never written into the artifact, the repository or any log.
 
 | Iteration | Ideal mass | Noisy Aer mass | **Real QPU** mass | Aer divergence | QPU divergence | Reality Flag (0.15) |
 |---:|---:|---:|---:|---:|---:|---:|
@@ -135,13 +135,13 @@ A classical diagnostic (Shannon + TVD) complements the dominant mass. At iterati
 | Tests | pytest | Data contracts and Reality Flag rule |
 | Artifacts | Versioned JSON | `ratiss.grover.sidecar.v1`, `ratiss.grover.reality_mode.v1` |
 
-The source topological engine ([`ratiss-topological-decoherence-engine`](https://github.com/evinajonathan13-max/ratiss-topological-decoherence-engine)) is an **explicit local-path** dependency — provenance stays visible.
+The source topological engine ([`ratiss-topological-decoherence-engine`](https://github.com/jonathansearch/ratiss-topological-decoherence-engine)) is an **explicit local-path** dependency — provenance stays visible.
 
 ## 8. Quick start and reproduction
 
 ```bash
-git clone https://github.com/evinajonathan13-max/Algorithmes-quantique-Ratiss-labs-.git
-git clone https://github.com/evinajonathan13-max/ratiss-topological-decoherence-engine.git
+git clone https://github.com/jonathansearch/Algorithmes-quantique-Ratiss-labs-.git
+git clone https://github.com/jonathansearch/ratiss-topological-decoherence-engine.git
 cd Algorithmes-quantique-Ratiss-labs-
 python3 -m pip install -e .
 
@@ -199,7 +199,7 @@ Distributed under the [MIT License](LICENSE) — © 2026 Jonathan Evina.
   title   = {Algorithmes quantiques RATISS Labs: Reproducible Grover
              and RATISS Logical-Sidecar Experiments},
   year    = {2026},
-  url     = {https://github.com/evinajonathan13-max/Algorithmes-quantique-Ratiss-labs-},
+  url     = {https://github.com/jonathansearch/Algorithmes-quantique-Ratiss-labs-},
   note    = {Reproducible local simulation; no hardware execution.}
 }
 ```
